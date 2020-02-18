@@ -26,8 +26,11 @@ class MainActivity : AppCompatActivity() {
 
     fun SetAdapter()
     {
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, /*TODO: get all films entries in resources*/)
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            listOf(getString(R.string.nothing_selected_item)) + resources.getStringArray(R.array.films).toList()
+        )
         adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         spinner!!.adapter = adapter
     }
@@ -35,9 +38,9 @@ class MainActivity : AppCompatActivity() {
     fun buttonOkSetup()
     {
         buttonOk.setOnClickListener{
-            if(spinner.selectedItem.toString().equals(/* TODO: take first item from array*/)
+            if(spinner.selectedItem.toString().equals(R.string.nothing_selected.toString()))
             {
-                resultTextView.text = R.string.films0_nothing_selected.toString()
+                resultTextView.text = getString(R.string.nothing_selected)
             }
             else
             {
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     {
         buttonCancel.setOnClickListener {
             spinner?.setSelection(0)
-            resultTextView.text = R.string.films0_nothing_selected.toString()
+            resultTextView.text = getString(R.string.nothing_selected)
         }
     }
 

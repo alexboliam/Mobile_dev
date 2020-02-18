@@ -10,7 +10,7 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/films0_nothing_selected"
+        android:text="@string/nothing_selected"
         android:textColor="#5b98d1"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
