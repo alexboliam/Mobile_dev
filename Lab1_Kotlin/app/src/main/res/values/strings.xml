@@ -1,0 +1,11 @@
+<resources>
+    <string name="spinner_title">Choose which picture deserves Oscar winning Award:</string>
+    <string name="Ok">Ok</string>
+    <string name="Cancel">Cancel</string>
+    <string name="films0_nothing_selected">Nothing is selected at the moment :(</string>
+    <string name="films1">Ford vs Ferrari</string>
+    <string name="films2">1917</string>
+    <string name="films3">Parasite</string>
+    <string name="films4">Joker</string>
+    <string name="films5">Once Upon a Time in Hollywood</string>
+</resources>
