@@ -3,7 +3,7 @@ package com.example.lab2_kotlin
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity(), MainFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
     override fun onFragmentInteraction(result: String) {
         var fragment = supportFragmentManager.findFragmentById(R.id.resultFragment) as ResultFragment

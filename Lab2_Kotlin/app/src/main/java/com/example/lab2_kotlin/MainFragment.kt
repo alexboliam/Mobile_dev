@@ -9,25 +9,28 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_main.*
 
+interface OnFragmentInteractionListener {
+    fun onFragmentInteraction(result: String)
+}
 
 class MainFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        return inflater.inflate(R.layout.fragment_main, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         SetAdapter()
 
         buttonOkSetup()
 
         buttonCancelSetup()
-        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
 
@@ -82,10 +85,5 @@ class MainFragment : Fragment() {
     }
 
 
-
-
-    interface OnFragmentInteractionListener {
-        fun onFragmentInteraction(result: String)
-    }
 
 }
