@@ -1,4 +1,4 @@
-package com.example.lab2_kotlin
+package com.example.lab3_kotlin
 
 import android.content.Context
 import android.os.Bundle
@@ -68,13 +68,13 @@ class MainFragment : Fragment() {
     fun buttonOkSetup()
     {
         buttonOk.setOnClickListener{
-            if(spinner.selectedItem.toString().equals(R.string.nothing_selected.toString()))
+            if(spinner.selectedItem.toString().equals(getString(R.string.nothing_selected)))
             {
                 listener?.onFragmentInteraction(getString(R.string.nothing_selected))
             }
             else
             {
-                listener?.onFragmentInteraction("Your choice: ${spinner?.selectedItem.toString()}")
+                listener?.onFragmentInteraction(spinner?.selectedItem.toString())
             }
         }
     }
