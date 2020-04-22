@@ -62,12 +62,18 @@ class FileFragment : Fragment() {
             {
                 // data/user/0/com.example.lab3_kotlin/files/321.txt
                 val file = File(context!!.filesDir, fileName.text.toString())
-                val contents = file.readText() // Read file
+                var fileExists = file.exists()
+                if(fileExists){
+                    val contents = file.readText() // Read file
 
-                val intent = Intent(this.context, FileoutputActivity::class.java)
-                intent.putExtra("text",contents)
-                intent.putExtra("filename",fileName.text.toString())
-                startActivity(intent)
+                    val intent = Intent(this.context, FileoutputActivity::class.java)
+                    intent.putExtra("text",contents)
+                    intent.putExtra("filename",fileName.text.toString())
+                    startActivity(intent)
+                }
+                else{
+                    resultFileFragmentText.text = "File does not exist"
+                }
             }
             else{
                 resultFileFragmentText.text = "You did not enter name of file to open"
